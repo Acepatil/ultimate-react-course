@@ -142,3 +142,167 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+// Destructuring
+
+/*const books = getBook(3);
+books;
+// const title=books.title;
+// const author=books.author;
+
+const { author, title, pages, genres, publicationDate } = books;
+
+genres;
+
+const [primaryGenre, secondaryGenre, ...otherGenre] = genres;
+
+otherGenre;
+
+// LHS-> Rest Operators
+// RHS-> Spread Operator
+
+const newGenres = [...genres, "horror"];
+
+newGenres;
+
+const updatedBook = {
+  ...books,
+  moviePublicationDate: "11/05/2004",
+  pages: 1240,
+  reviewsCount: 0,
+};
+// Same property name is ovverride the previous object
+updatedBook;
+// Template Literal
+pages;
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published on the ${books.publicationDate}`;
+summary;
+
+// Teneray Operator
+const lengthSummary = pages > 1000 ? "The books is very long" : "Small Book";
+pages;
+lengthSummary;
+
+// Arrow Function
+const getPublishYear = (str) => str.split("-")[0];
+getPublishYear(publicationDate);
+
+// Short Curcuiting
+// For Falsy Value->0,'',null ,undefined
+
+console.log(false && "Somestring");
+console.log(true && "Some String");
+
+console.log(false || "Somestring");
+console.log(true || "Some String");
+
+const spanishTranslation = books.translations.spanish || "Not Translated";
+spanishTranslation;
+
+const count = updatedBook.reviewsCount || "no data";
+count;
+
+// To solve for 0 and ''
+const updatedCount = updatedBook.reviewsCount ?? "no data";
+updatedCount;
+
+// Optional Chaining
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  // Pronlem if something is undefined
+
+  // ?. is optional chaining
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(books));
+
+// Array methods
+// Map method is a method to apply a callback function on every element of the array
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+x;
+
+const books1 = getBooks();
+const titles = books1.map((books) => books.title);
+titles;
+
+const essentialData = books1.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+
+essentialData;
+
+// Filter method
+// Only gives the elements which satify the callback function
+const longBooks = books1
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooks;
+
+const adventureBooks = books1
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book)=>book.title);
+adventureBooks;
+
+// Reduce Method
+// This method is to make a array to one value takes one argument as callback function and second parameter as starter value
+
+const pagesAllBooks=books1.reduce((acc,book)=>acc+book.pages,0)
+pagesAllBooks
+
+// Sort Method-> affects the orginal array
+// Use to sort the value
+const arr=[3,7,1,4]
+// Slice is used to give a copy
+const sorted=arr.slice().sort((a,b)=>b-a)
+sorted
+arr
+
+const sortedByPages=books1.slice().sort((a,b)=>a.pages-b.pages).map(book=>book.title)
+sortedByPages
+
+// Addition in Arrays
+const newBook={
+  id:6,
+  title:'Harry Potter',
+  author:'J.K Rowling'
+}
+
+const booksAfterAdd=[...books1,newBook]
+booksAfterAdd
+
+// Delete in Array
+const booksAfterDelete=booksAfterAdd.filter((book)=>book.id!==3)
+booksAfterDelete
+
+// Update in Array
+const booksAfterUpdate=booksAfterDelete.map((book)=>{
+  book.id===1?{...book,pages:1210}:book
+})
+
+booksAfterUpdate*/
+
+// Promises
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+// .then(response => response.json())
+// .then(json => console.log(json))
+
+console.log("Jonas")
+
+
+async function getTodos(){
+  const res =await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  const data=await res.json()
+  console.log(data)
+  return data
+}
+getTodos()
+
+const todos=getTodos()
+console.log(todos)
+
+console.log("Jonas");
+
+
