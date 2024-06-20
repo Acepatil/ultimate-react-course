@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-// import './index.css'
+import App from './App.jsx'
+import './index.css'
 import StarRating from './StarRating.jsx'
 
 function Test(){
@@ -17,8 +17,8 @@ function Test(){
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <StarRating/>
+    <App />
+    {/* <StarRating/> */}
     <Test/>
   </React.StrictMode>,
 )
